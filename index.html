@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+    rel="stylesheet"     
+    integrity= "FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+
+  <body>
+    <div class="container mt-3">
+        <div class="card">
+            <div class="card-header">
+                <h1> <i class="fa-solid fa-calculator"></i> Mall Mangga Dua Simulator </h1>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="number1" class="form-label">First Number</label>
+                    <input type="number" class="form-control" id="number1" 
+                    placeholder="Input Your First Number">
+                </div>
+            </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="number2" class="form-label">Second Number</label>
+                <input type="number" class="form-control" id="number2" 
+                placeholder="Input Your Second Number">
+            </div>
+        </div>
+
+        <div class="row text-center">
+            <div class="col">
+                <button type="button" class="btn btn-warning" onclick="tambah()">
+                    <b>+</b>
+                </button>
+                <button type="button" class="btn btn-danger" onclick="kurang()">
+                    <b>-</b>
+                </button>
+                <button type="button" class="btn btn-success" onclick="kali()">
+                    <b>x</b>
+                </button>
+                <button type="button" class="btn btn-primary" onclick="bagi()">
+                    <b>/</b>
+                </button>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col text-center">
+                <h4 id="hasil"></h4>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row text-center">
+        <div class="col mt-3">
+            <small class="text-primary">
+                <p>
+                    Nama: Ezra Mochtar<br>
+                    NIM: 24/544939/SV/25573<br>
+                    Kelas: B<br>
+                </p>
+            </small>
+        </div>
+    </div>
+
+    <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+    integrity="FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
+    crossorigin="anonymous">
+    </script>
+    
+    <script>
+        function getNumbers() {
+            var n1 = parseFloat(document.getElementById('number1').value);
+            var n2 = parseFloat(document.getElementById('number2').value);
+            return [n1, n2];
+        }
+
+        function tampilkanHasil(teks) {
+            document.getElementById("hasil").innerHTML = teks;
+        }
+
+        function tambah(){
+            var [n1, n2] = getNumbers();
+            if (isNaN(n1) || isNaN(n2)) {
+                tampilkanHasil("input all numbers nigga.");
+                return;
+            }
+            tampilkanHasil((n1 + n2));
+        }
+
+        function kurang(){
+            var [n1, n2] = getNumbers();
+            if (isNaN(n1) || isNaN(n2)) {
+                tampilkanHasil("input all numbers nigga");
+                return;
+            }
+            tampilkanHasil((n1 - n2));
+        }
+
+        function kali(){
+            var [n1, n2] = getNumbers();
+            if (isNaN(n1) || isNaN(n2)) {
+                tampilkanHasil("input all numbers nigga");
+                return;
+            }
+            tampilkanHasil((n1 * n2));
+        }
+
+        function bagi(){
+            var [n1, n2] = getNumbers();
+            if (isNaN(n1) || isNaN(n2)) {
+                tampilkanHasil("input both numbers nigga");
+                return;
+            }
+            if (n2 === 0) {
+                tampilkanHasil("anda dinyatakan sah untuk menikah dengan Ahmad Sahroni");
+                return;
+            }
+            tampilkanHasil("Hasil Pembagian: " + (n1 / n2));
+        }
+    </script>
+    </body>
+</html>
